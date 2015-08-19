@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <script>
+    
+    function myFunction() {
+        var x ;
+        x = document.getElementById("numb").value ;
+        document.getElementById("array").innerHTML = wonderous(x)[0];
+        document.getElementById("count").innerHTML = wonderous(x)[1];       
+        document.getElementById("count").innerHTML += " members, How Wonderous!";
+    
+    }
+    
+    function wonderous(w) {
+        var ans= [] ;
+        var w_array=[w];
+        while( w != 1){
+            if(w%2 == 0){
+                w=w/2;
+            }else{
+                w=3*w+1;
+            }
+            count=w_array.push(w)
+        }    
+        ans=[w_array,count]
+        return( ans );
+    }
+       
+    </script>
+  </head>
+  <body>
+      <DIV align="center"> 
+    <h1>JavaScript Wonderous Sequence Generator.</h1>
+    <p>Compute the wonderous sequence for the number:</p>
+    
+    <input id="numb" type="number" />
+    <button type="button" onclick="myFunction()" > Submit</button>
+   
+    <p id="array" style="word-wrap:break-word">sequence</p>  
+    <p id="count" style="word-wrap:break-word">count</p>
+      </DIV>
+  
+</body>
+
+</html>
